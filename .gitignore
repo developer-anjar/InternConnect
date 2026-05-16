@@ -24,3 +24,5 @@ backend/src/main/resources/application-secret.properties
 # OS
 .DS_Store
 Thumbs.db
+
+internConnect Backend/src/main/resources/application-secret.properties
