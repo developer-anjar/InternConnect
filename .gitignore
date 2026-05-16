@@ -1,0 +1,26 @@
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Spring Boot
+backend/target/
+
+# Secret file
+backend/src/main/resources/application-secret.properties
+
+# IDE
+.vscode/
+.idea/
+
+# Eclipse / STS
+*.classpath
+*.project
+.settings/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
