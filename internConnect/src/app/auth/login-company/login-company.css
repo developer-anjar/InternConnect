@@ -1,0 +1,292 @@
+/* MAIN CONTAINER */
+.main-container {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+/* WRAPPER */
+.flip-card-container {
+  width: 100%;
+  max-width: 420px;
+  font-size: 14px;
+  position: relative;
+  top: 30px;
+}
+
+/* FLIP ANIMATION */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  transform-style: preserve-3d;
+  transition: 0.7s;
+}
+
+.flip-card-inner.flip {
+  transform: rotateY(180deg);
+}
+
+/* CARD SIDES */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 5px 28px rgba(0,0,0,0.18);
+}
+
+/* ✅ FORM BACKGROUND COLOR */
+.form-bg {
+  background: #424769 !important;
+  color: white;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* INPUTS */
+.form-control {
+  font-size: 14px;
+  padding: 6px 10px;
+  background: #ffffff;
+}
+
+.input-group-text {
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.forgot-link,
+.switch-link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.forgot-link:hover,
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+/* INTERNAL TABS */
+.internal-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.internal-tab-item.active {
+  border-bottom: 2px solid #f9b17a;
+}
+
+/* FORGOT POPUP */
+.forgot-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;/* ========= PAGE BACKGROUND ========= */
+.main-container {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #5961f9, #758bff);
+  padding: 70px 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ========= FORM CARD ========= */
+.flip-card-front {
+  width: 430px;
+  background: #111a3a;
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0px 15px 30px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ========= TAB HEADERS ========= */
+.internal-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.internal-tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 15px;
+  cursor: pointer;
+  color: #bfc6ff;
+  transition: .25s;
+}
+
+.internal-tab-item.active {
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.internal-tab-item:hover {
+  color: #fff;
+}
+
+/* ========= FORM LABELS ========= */
+.form-label {
+  color: #cad2ff;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* ========= INPUT FIELDS ========= */
+.form-control {
+  background: #ffffff;
+  border-radius: 8px !important;
+  padding: 10px 14px;
+  border: none;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #7b86ff;
+}
+
+/* ========= SIGNUP BUTTON ========= */
+.custom-btn {
+  width: 100%;
+  background: #4b4b4b;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 0;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: .25s;
+}
+
+.custom-btn:enabled:hover {
+  background: #2f2f2f;
+  cursor: pointer;
+}
+
+.custom-btn:disabled {
+  background: #616161 !important;
+}
+
+/* ========= LINKS ========= */
+.switch-link,
+.forgot-link {
+  display: inline-block;
+  color: #e3e6ff;
+  text-decoration: underline;
+  margin-top: 15px;
+}
+
+.switch-link:hover,
+.forgot-link:hover {
+  color: #fff;
+}
+
+/* ========= MODAL ========= */
+.forgot-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.forgot-box {
+  background: #111a3a;
+  padding: 30px 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.forgot-box .btn-primary {
+  background: #5961f9;
+  border: none;
+}
+
+.forgot-box .btn-primary:hover {
+  background: #4248d6;
+}
+
+/* ========= MOBILE ========= */
+@media (max-width: 500px) {
+  .flip-card-front {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .internal-tab-item {
+    font-size: 13px;
+  }
+}
+
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot-box {
+  background: white;
+  width: 350px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* CUSTOM BUTTON */
+.custom-btn {
+  background: #f9b17a !important;
+  color: black !important;
+  border: none;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.custom-btn:disabled {
+  background: #f9b17a80 !important;
+  color: black !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .internal-tabs {
+    gap: 20px;
+    font-size: 16px;
+  }
+}

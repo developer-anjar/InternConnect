@@ -1,0 +1,189 @@
+/* Title */
+.applications-title {
+  color: #2d3250;
+  font-weight: 700;
+}
+
+/* Card Styling */
+.app-card {
+  border: 1px solid #e3e3e3;
+  border-left: 6px solid #424769;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Accept Button (Theme Pink) */
+.accept-btn {
+  background-color: #2d3250;
+  color: #ffffff;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.accept-btn:hover {
+  background-color: #424769;
+}
+
+/* Reject Button (Accent Pink) */
+.reject-btn {
+  background-color: #fb1b7a;
+  color: #ffffff;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.reject-btn:hover {
+  background-color: #da1668;
+}
+.container {
+  max-width: 1000px;
+}
+
+.badge {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* Student Info in Table */
+.student-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-info strong {
+  color: #2d3250;
+  font-size: 14px;
+}
+
+.student-info small {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-dialog {
+  max-width: 800px;
+  margin: 1.75rem auto;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #2d3250, #424769);
+  color: white;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: opacity 0.2s;
+}
+
+.close:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-body h6 {
+  color: #2d3250;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e3e3e3;
+  padding-bottom: 0.5rem;
+}
+
+.modal-body p {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.modal-footer {
+  border-top: 1px solid #e3e3e3;
+  padding: 1rem 2rem;
+  background: #f8f9fa;
+  border-radius: 0 0 12px 12px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+/* Table Responsive */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2d3250;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Button Styles */
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}
+.mt-55{
+  margin-top: 55px;
+}

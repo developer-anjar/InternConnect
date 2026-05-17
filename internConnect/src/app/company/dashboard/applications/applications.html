@@ -1,0 +1,122 @@
+<div class="container mt-55">
+
+  <h2 class="mb-4">Internship Applications</h2>
+
+  <div *ngIf="loading">Loading...</div>
+
+  <table class="table table-bordered" *ngIf="!loading && applications.length">
+
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Internship Title</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let app of applications; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <div class="student-info">
+            <strong>{{ app.studentData?.profile?.fullName || 'N/A' }}</strong>
+            <small class="text-muted">ID: {{ app.studentId }}</small>
+          </div>
+        </td>
+        <td>{{ app.studentData?.profile?.email || 'N/A' }}</td>
+        <td>{{ app.internshipTitle || 'N/A' }}</td>
+
+        <td>
+          <span
+            class="badge"
+            [ngClass]="{
+              'bg-warning': app.status === 'PENDING',
+              'bg-success': app.status === 'APPROVED',
+              'bg-danger': app.status === 'REJECTED'
+            }"
+          >
+            {{ app.status }}
+          </span>
+        </td>
+
+        <td>
+          <button
+            class="btn btn-info btn-sm me-2"
+            (click)="viewStudentDetails(app)"
+            title="View Student Details"
+          >
+            <i class="bi bi-eye"></i> Details
+          </button>
+
+          <button
+            class="btn btn-success btn-sm me-2"
+            (click)="updateStatus(app.applicationId, 'APPROVED')"
+            [disabled]="app.status !== 'PENDING'"
+          >
+            Approve
+          </button>
+
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="updateStatus(app.applicationId, 'REJECTED')"
+            [disabled]="app.status !== 'PENDING'"
+          >
+            Reject
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div *ngIf="!loading && !applications.length" class="alert alert-info">
+    No applications yet
+  </div>
+
+</div>
+
+<!-- Student Details Modal -->
+<div class="modal fade" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Student Details</h5>
+        <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="selectedApplication">
+        <div class="row">
+          <div class="col-md-6">
+            <h6>Personal Information</h6>
+            <p><strong>Name:</strong> {{ selectedApplication.studentData?.profile?.fullName || 'N/A' }}</p>
+            <p><strong>Email:</strong> {{ selectedApplication.studentData?.profile?.email || 'N/A' }}</p>
+            <p><strong>Phone:</strong> {{ selectedApplication.studentData?.profile?.phone || 'N/A' }}</p>
+            <p><strong>City:</strong> {{ selectedApplication.studentData?.profile?.city || 'N/A' }}</p>
+            <p><strong>State:</strong> {{ selectedApplication.studentData?.profile?.state || 'N/A' }}</p>
+          </div>
+          <div class="col-md-6">
+            <h6>Academic Information</h6>
+            <p><strong>Skills:</strong> {{ selectedApplication.studentData?.skills || 'N/A' }}</p>
+            <p><strong>Education:</strong> {{ selectedApplication.studentData?.education?.length ? selectedApplication.studentData.education[0].course + ' - ' + selectedApplication.studentData.education[0].institute : 'N/A' }}</p>
+            <p><strong>Projects:</strong> {{ selectedApplication.studentData?.projects?.length || 0 }} projects</p>
+            <p><strong>Resume:</strong> {{ selectedApplication.studentData?.resume ? 'Uploaded' : 'Not uploaded' }}</p>
+          </div>
+        </div>
+        <div class="mt-3" *ngIf="selectedApplication.studentData?.profile?.about">
+          <h6>About</h6>
+          <p>{{ selectedApplication.studentData.profile.about }}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Backdrop -->
+<div class="modal-backdrop fade show" *ngIf="showModal"></div>

@@ -1,0 +1,72 @@
+<div class="profile-container" *ngIf="!loading">
+  
+  <div *ngIf="profile; else noProfile">
+
+    <div class="profile-card">
+
+      <div class="profile-header">
+  <div class="header-left">
+    <div class="logo-box">
+      <div
+        class="letter-logo"
+        [style.background]="getLogoGradient(profile.companyName)">
+        {{ getCompanyInitials(profile.companyName) }}
+      </div>
+    </div>
+
+    <div class="title-wrap">
+      <h2>{{ profile.companyName }}</h2>
+      <span class="subtitle">Company Profile</span>
+    </div>
+  </div>
+
+  <button (click)="goEdit()" class="edit-btn">Edit Profile</button>
+</div>
+
+
+      <div class="profile-content">
+
+        <div class="info-row">
+          <label>Email</label>
+          <p>{{ profile.email }}</p>
+        </div>
+
+        <div class="info-row">
+          <label>Phone</label>
+          <p>{{ profile.phone }}</p>
+        </div>
+
+        <div class="info-row">
+          <label>Location</label>
+          <p>{{ profile.location }}</p>
+        </div>
+
+        <div class="info-row">
+          <label>Established</label>
+          <p>{{ profile.establishedYear }}</p>
+        </div>
+
+        <div class="info-row">
+          <label>Company Size</label>
+          <p>{{ profile.companySize }}</p>
+        </div>
+
+        <div class="info-row full">
+          <label>Description</label>
+          <p class="desc">{{ profile.description }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <ng-template #noProfile>
+    <div class="no-profile">
+      <h3>No Profile Found</h3>
+      <button (click)="goEdit()" class="create-btn">Create Profile</button>
+    </div>
+  </ng-template>
+
+</div>

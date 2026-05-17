@@ -1,0 +1,10 @@
+.student-dashboard-page {
+  padding: 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.student-dashboard-page > router-outlet {
+  display: block;
+}
+     

@@ -1,0 +1,52 @@
+<div class="manage-wrap">
+
+  <div class="top-bar">
+    <div>
+      <h2>Your Internships</h2>
+      <p>Manage all internships you’ve posted</p>
+    </div>
+
+    <button class="add-btn" (click)="addNew()">+ Add Internship</button>
+  </div>
+
+  <div *ngIf="internships.length === 0" class="empty-state">
+    <h3>No internships yet</h3>
+    <p>Start by posting your first internship</p>
+    <button class="add-btn" (click)="addNew()">Post Internship</button>
+  </div>
+
+  <div class="table" *ngIf="internships.length > 0">
+
+    <div class="row header-row">
+      <span>Internship</span>
+      <span>Location</span>
+      <span>Duration</span>
+      <span>Status</span>
+      <span>Actions</span>
+    </div>
+
+    <div class="row" *ngFor="let i of internships">
+      <div class="title">
+        <strong>{{ i.internshipTitle || i.title || 'Untitled Internship' }}</strong>
+        <small>ID #{{ i.internshipId }}</small>
+      </div>
+
+      <div>{{ i.companyLocation || i.location || 'Not specified' }}</div>
+
+      <div>{{ i.duration }} months</div>
+
+      <div>
+        <span class="badge" [class.active]="i.status === 'ACTIVE'">
+          {{ i.status }}
+        </span>
+      </div>
+
+      <div class="actions">
+        <button class="edit" (click)="edit(i.internshipId)">Edit</button>
+        <button class="delete" (click)="delete(i.internshipId)">Delete</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

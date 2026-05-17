@@ -1,0 +1,141 @@
+/* GLOBAL CONTAINER */
+.internship-detail {
+  background: #F5F7FA;
+  padding: 40px;
+  border-radius: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #263238;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #1976D2, #26A69A);
+  padding: 30px;
+  border-radius: 16px;
+  color: white;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(25, 118, 210, 0.2);
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.company {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #00ACC1;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.info-grid div {
+  background: #F5F7FA;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.info-grid div:hover {
+  background: #E3F2FD;
+  transform: translateY(-4px);
+}
+
+/* SECTIONS */
+.section {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.section h3 {
+  color: #1976D2;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-left: 4px solid #26A69A;
+  padding-left: 10px;
+}
+
+.section h4 {
+  margin-top: 15px;
+  color: #26A69A;
+  font-size: 15px;
+}
+
+.section p, .section li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.section ul {
+  padding-left: 18px;
+}
+
+/* APPLY BOX */
+.apply-box {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* APPLY BUTTON */
+.apply-btn {
+  background: #00ACC1;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 172, 193, 0.3);
+}
+
+.apply-btn:hover {
+  background: #0097A7;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 172, 193, 0.4);
+}
+
+.apply-btn:disabled {
+  background: #B0BEC5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+  color: #1976D2;
+}

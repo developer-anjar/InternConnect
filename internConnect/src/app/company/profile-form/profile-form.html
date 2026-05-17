@@ -1,0 +1,59 @@
+<div class="profile-wrap mt-55">
+  <h2>{{ isEditMode ? "Edit Company Profile" : "Create Company Profile" }}</h2>
+  <button type="button" class="btn btn-link p-0 mb-3" (click)="router.navigate(['/dashboard/profile'])">← Back</button>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-row">
+      <label>Company ID</label>
+      <input formControlName="companyId" readonly />
+    </div>
+
+    <div class="form-row">
+      <label>Company Name *</label>
+      <input formControlName="companyName" />
+    </div>
+
+    <div class="form-row">
+      <label>Email</label>
+      <input formControlName="email" />
+    </div>
+
+    <div class="form-row">
+      <label>Phone</label>
+      <input formControlName="phone" />
+    </div>
+
+    <div class="form-row">
+      <label>Location</label>
+      <input formControlName="location" />
+    </div>
+
+    <div class="form-row">
+      <label>Established Year</label>
+      <input formControlName="establishedYear" />
+    </div>
+
+    <div class="form-row">
+      <label>Company Size</label>
+      <select formControlName="companySize">
+        <option value="">Select</option>
+        <option value="1-10">1-10</option>
+        <option value="11-50">11-50</option>
+        <option value="51-200">51-200</option>
+        <option value="201-500">201-500</option>
+        <option value="500+">500+</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Description</label>
+      <textarea formControlName="description" rows="4"></textarea>
+    </div>
+
+    <div class="actions">
+      <button type="submit">{{ isEditMode ? "Update" : "Save" }}</button>
+    </div>
+
+  </form>
+</div>

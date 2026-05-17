@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h2>Add/Edit Education</h2>
+  <button type="button" class="btn btn-link p-0 mb-3" (click)="router.navigate(['/student-dashboard'])">← Back</button>
+  <form [formGroup]="educationForm" (ngSubmit)="saveEducation()">
+    <div class="mb-3">
+      <label>Course</label>
+      <input type="text" class="form-control" formControlName="course" required>
+    </div>
+    <div class="mb-3">
+      <label>Institute</label>
+      <input type="text" class="form-control" formControlName="institute" required>
+    </div>
+    <div class="mb-3">
+      <label>Duration</label>
+      <input type="text" class="form-control" formControlName="duration" placeholder="e.g., 2022 - 2025" required>
+    </div>
+    <div class="mb-3">
+      <label>Score</label>
+      <input type="text" class="form-control" formControlName="score" placeholder="e.g., 82%">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!educationForm.valid">Save & Next</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="router.navigate(['/student-dashboard'])">Skip</button>
+  </form>
+</div>

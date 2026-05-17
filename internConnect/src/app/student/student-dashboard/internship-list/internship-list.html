@@ -1,0 +1,209 @@
+<div class="page-container">
+
+  <div class="list-header mb-5">
+    <h1 class="page-title mb-2">Explore Internships</h1>
+    <p class="page-subtitle">Find and apply to the best internship opportunities</p>
+  </div>
+
+  <div class="row g-4">
+    <!-- FILTERS SIDEBAR -->
+    <div class="col-lg-3">
+      <div class="filters-box card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-funnel me-2"></i>
+            Filters
+          </h5>
+        </div>
+
+        <div class="card-body">
+          <!-- Search -->
+          <div class="filter-group">
+            <label class="filter-label">Search</label>
+            <div class="search-wrapper">
+              <i class="bi bi-search"></i>
+              <input type="text"
+                     class="form-control"
+                     [(ngModel)]="keyword"
+                     (input)="applyFilters()"
+                     placeholder="Company / Role">
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="filter-group">
+            <label class="filter-label">Location</label>
+            <div class="search-wrapper">
+              <i class="bi bi-geo-alt"></i>
+              <input type="text"
+                     class="form-control"
+                     [(ngModel)]="locationFilter"
+                     (input)="applyFilters()"
+                     placeholder="City">
+            </div>
+          </div>
+
+          <!-- Type -->
+          <div class="filter-group">
+            <label class="filter-label">Type</label>
+
+            <div class="checkbox-row">
+              <input type="checkbox"
+                     id="wfh"
+                     [(ngModel)]="workFromHome"
+                     (change)="applyFilters()">
+              <label for="wfh" class="mb-0">Work from home</label>
+            </div>
+
+            <div class="checkbox-row">
+              <input type="checkbox"
+                     id="pt"
+                     [(ngModel)]="partTime"
+                     (change)="applyFilters()">
+              <label for="pt" class="mb-0">Part-time</label>
+            </div>
+          </div>
+
+          <!-- Stipend -->
+          <div class="filter-group">
+            <label class="filter-label">Min Stipend</label>
+
+            <div class="stipend-buttons">
+              <button class="stipend-btn" (click)="setStipend(0)">₹0</button>
+              <button class="stipend-btn" (click)="setStipend(5000)">₹5K</button>
+              <button class="stipend-btn" (click)="setStipend(10000)">₹10K</button>
+              <button class="stipend-btn" (click)="setStipend(15000)">₹15K</button>
+            </div>
+
+            <input type="range"
+                   class="form-range"
+                   min="0"
+                   max="15000"
+                   step="5000"
+                   [(ngModel)]="stipendFilter"
+                   (change)="applyFilters()">
+            <small class="text-muted">Selected: ₹{{ stipendFilter }}</small>
+          </div>
+
+          <!-- More Filters -->
+          <button class="btn btn-outline-primary w-100 btn-sm" (click)="toggleFilters()">
+            {{ showMoreFilters ? '✕ Hide More Filters' : '+ Show More Filters' }}
+          </button>
+
+          <!-- Extra Filters -->
+          <div *ngIf="showMoreFilters" class="more-filters mt-3">
+
+            <!-- Duration -->
+            <div class="filter-group">
+              <label class="filter-label">Max Duration</label>
+              <select class="form-select"
+                      [(ngModel)]="durationFilter"
+                      (change)="applyFilters()">
+                <option value="">Any</option>
+                <option *ngFor="let m of [1,2,3,4,6]">{{ m }} Months</option>
+              </select>
+            </div>
+
+            <!-- Benefits -->
+            <div class="filter-group">
+              <label class="filter-label">Benefits</label>
+
+              <div class="checkbox-row">
+                <input type="checkbox"
+                       id="ppo"
+                       [(ngModel)]="withPPO"
+                       (change)="applyFilters()">
+                <label for="ppo" class="mb-0">PPO Available</label>
+              </div>
+
+              <div class="checkbox-row">
+                <input type="checkbox"
+                       id="women"
+                       [(ngModel)]="forWomenOnly"
+                       (change)="applyFilters()">
+                <label for="women" class="mb-0">For Women</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERNSHIPS LIST -->
+    <div class="col-lg-9">
+      <!-- Loading -->
+      <div *ngIf="loading" class="text-center py-5">
+        <div class="spinner-border text-primary mb-3" role="status"></div>
+        <p class="text-muted">Loading internships...</p>
+      </div>
+
+      <!-- Empty -->
+      <div *ngIf="!loading && filteredInternships.length === 0" class="empty-state text-center py-5">
+        <i class="bi bi-search" style="font-size: 3rem; color: #ccc;"></i>
+        <h5 class="text-muted mt-3">No internships found</h5>
+        <p class="text-muted small">Try adjusting your filters</p>
+      </div>
+
+      <!-- Cards -->
+      <div class="internship-card card shadow-sm border-0 mb-3" *ngFor="let i of filteredInternships">
+        <div class="card-body">
+          <div class="row align-items-start">
+            <!-- Logo -->
+            <div class="col-auto">
+              <div class="company-logo" [style.background]="getLogoColor(i.companyName)">
+                {{ getCompanyInitials(i.companyName) }}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="col">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div>
+                  <h5 class="card-title mb-1">
+                    {{ i.internshipTitle || i.title || i.profile || 'Internship Opportunity' }}
+                  </h5>
+                  <p class="company-name text-muted mb-0">
+                    {{ i.companyName }}
+                  </p>
+                </div>
+                <div class="badge-group">
+                  <span class="badge bg-light text-dark">{{ i.internshipType || i.type || 'N/A' }}</span>
+                  <span class="badge bg-success" *ngIf="i.jobOffer">PPO</span>
+                  <span class="badge bg-info" *ngIf="i.forWomen">Women</span>
+                </div>
+              </div>
+
+              <!-- Info Grid -->
+              <div class="info-grid mb-3">
+                <div class="info-item">
+                  <i class="bi bi-geo-alt text-danger"></i>
+                  <span>{{ i.companyLocation || i.location || 'Not specified' }}</span>
+                </div>
+                <div class="info-item">
+                  <i class="bi bi-cash text-success"></i>
+                  <span>₹{{ i.stipend ?? 0 }}</span>
+                </div>
+                <div class="info-item">
+                  <i class="bi bi-calendar text-primary"></i>
+                  <span>{{ i.duration ?? i.durationMonths ?? 0 }} Months</span>
+                </div>
+              </div>
+
+              <!-- Dates & Button -->
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">
+                  Apply By: <strong>{{ (i.applyBy || i.lastDate) | date:'MMM d, y' }}</strong>
+                </small>
+                <button class="btn btn-primary btn-sm"
+                        (click)="viewDetail(i.internshipId)">
+                  <i class="bi bi-arrow-right me-1"></i>View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

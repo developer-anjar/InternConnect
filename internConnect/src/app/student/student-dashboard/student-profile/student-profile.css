@@ -1,0 +1,287 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+.student-profile-page {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 0 16px 40px;
+  font-family: "Inter", sans-serif;
+  color: #263238;
+}
+
+.top-card,
+.info-card,
+.action-card,
+.support-card,
+.action-tile {
+  background: #ffffff;
+  border-radius: 24px;
+}
+
+.card {
+  border: none;
+}
+
+/* =========================
+   TOP PROFILE CARD
+========================= */
+.top-card {
+  overflow: hidden;
+}
+
+.profile-avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: 700;
+  box-shadow: 0 18px 40px rgba(25, 118, 210, 0.12);
+}
+
+.bg-sky {
+  background: linear-gradient(135deg, #1976D2, #26A69A);
+}
+
+.text-sky {
+  color: #1976D2 !important;
+}
+
+.text-primary {
+  color: #1976D2 !important;
+}
+
+.top-card .profile-summary {
+  max-width: 640px;
+}
+
+/* =========================
+   PROFILE DETAIL CARDS
+========================= */
+.info-card {
+  box-shadow: 0 20px 45px rgba(24, 84, 255, 0.05);
+}
+
+.info-card .card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 16px;
+  border-radius: 18px;
+  background: #f7fbff;
+  border: 1px solid #e7eff8;
+}
+
+.detail-item .label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #1976D2;
+}
+
+.detail-item .value {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.detail-about {
+  min-height: 120px;
+}
+
+.badge.bg-sky-light {
+  background: rgba(25, 118, 210, 0.08);
+  color: #1976D2;
+  font-weight: 700;
+}
+
+/* =========================
+   QUICK ACTION TILE
+========================= */
+.action-card {
+  box-shadow: 0 20px 45px rgba(24, 84, 255, 0.05);
+}
+
+.action-tile {
+  border: 1px solid #e6f0fb;
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: inherit;
+}
+
+.action-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(25, 118, 210, 0.12);
+}
+
+.action-tile .card-body {
+  padding: 18px;
+}
+
+.action-tile h6 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.action-tile p {
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   RECENT APPLICATIONS
+========================= */
+.recent-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid #e8f1fb;
+  margin-bottom: 12px;
+  background: #f9fbff;
+}
+
+.recent-item:last-child {
+  margin-bottom: 0;
+}
+
+.recent-item h6 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.recent-item p {
+  margin-bottom: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.support-card {
+  min-height: 220px;
+  box-shadow: 0 20px 45px rgba(24, 84, 255, 0.05);
+}
+
+.support-card .btn {
+  min-width: 160px;
+}
+
+/* =========================
+   BUTTON STYLES
+========================= */
+.btn-primary {
+  background: linear-gradient(135deg, #1976D2, #26A69A);
+  border: none;
+}
+
+.btn-outline-primary {
+  border-color: #1976D2;
+  color: #1976D2;
+}
+
+.btn-outline-primary:hover {
+  background: rgba(25, 118, 210, 0.08);
+}
+
+/* =========================
+   NEW ACTION TILE STYLES
+========================= */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15) !important;
+}
+
+.tile-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.action-tile:hover .tile-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.ai-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+}
+
+.ai-tile {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 1px solid #dee2e6 !important;
+}
+
+.ai-tile:hover {
+  background: linear-gradient(135deg, #e9ecef, #dee2e6);
+}
+
+.profile-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+}
+
+.action-card h5 {
+  font-weight: 600;
+}
+
+.action-card h6 {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px) {
+  .top-card .row {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .student-profile-page {
+    margin-top: 20px;
+    padding: 0 12px 30px;
+  }
+
+  .top-card {
+    border-radius: 20px;
+  }
+
+  .profile-avatar {
+    width: 76px;
+    height: 76px;
+    font-size: 26px;
+  }
+
+  .detail-item {
+    padding: 16px;
+  }
+
+  .action-tile {
+    min-height: 120px;
+  }
+}

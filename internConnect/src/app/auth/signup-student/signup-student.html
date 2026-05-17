@@ -1,0 +1,62 @@
+<div class="main-container">
+  <div class="signup-box">
+
+    <div class="internal-tabs">
+      <div class="internal-tab-item active">Student</div>
+      <div class="internal-tab-item" (click)="router.navigate(['/signup-company'])">
+        Employer / T&P
+      </div>
+    </div>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Enter Name">
+        <div class="form-error" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="text" class="form-control" formControlName="phone" placeholder="Enter Phone no">
+        <div class="form-error" *ngIf="signupForm.get('Phone')?.touched && signupForm.get('Phone')?.invalid">
+          Phone is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+        <div class="form-error" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+          Enter a valid email.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+        <div class="form-error" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+          Password is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm password">
+        <div class="form-error" *ngIf="signupForm.errors?.['mismatch'] && signupForm.get('confirmPassword')?.touched">
+          Passwords do not match.
+        </div>
+      </div>
+
+      <button class="custom-btn" type="submit" [disabled]="signupForm.invalid">Signup</button>
+
+      <p class="text-center mt-3">
+        <a routerLink="/login" class="switch-link">Already have an account? Login</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>

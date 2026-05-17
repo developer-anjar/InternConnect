@@ -1,0 +1,51 @@
+<div class="container mt-4">
+
+<h2>My Applications</h2>
+
+<div *ngIf="loading">Loading...</div>
+
+<table class="table table-bordered" *ngIf="!loading && applications.length">
+
+<thead>
+<tr>
+<th>#</th>
+<th>Internship ID</th>
+<th>Status</th>
+<th>Applied Date</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr *ngFor="let app of applications; let i=index">
+
+<td>{{i+1}}</td>
+
+<td>{{app.internshipId}}</td>
+
+<td>
+
+<span class="badge"
+[ngClass]="{
+'bg-warning': app.status === 'PENDING',
+'bg-success': app.status === 'APPROVED',
+'bg-danger': app.status === 'REJECTED'
+}">
+{{app.status}}
+</span>
+
+</td>
+
+<td>{{app.appliedAt | date}}</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div *ngIf="!loading && !applications.length" class="alert alert-info">
+You have not applied to any internships yet.
+</div>
+
+</div>

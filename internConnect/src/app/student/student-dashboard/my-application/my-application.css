@@ -1,0 +1,182 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+.my-applications-page {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 0 16px 40px;
+  font-family: "Inter", sans-serif;
+  color: #263238;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1976D2;
+  margin-bottom: 8px;
+  letter-spacing: -0.4px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* =========================
+   APPLICATION CARDS
+========================= */
+.application-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(24, 84, 255, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.application-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(24, 84, 255, 0.08);
+}
+
+.application-card .card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1976D2;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.badge.bg-warning {
+  background: #fbbf24 !important;
+  color: #92400e !important;
+}
+
+.badge.bg-success {
+  background: #10b981 !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-danger {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-info {
+  background: #06b6d4 !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   APPLICATION DETAILS
+========================= */
+.application-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f7fbff;
+  border: 1px solid #e7eff8;
+}
+
+.detail-item .label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #1976D2;
+}
+
+.detail-item .value {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* =========================
+   CARD ACTIONS
+========================= */
+.card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-outline-primary {
+  border-color: #1976D2;
+  color: #1976D2;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+  background: rgba(25, 118, 210, 0.08);
+  border-color: #1976D2;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1976D2, #26A69A);
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty-state {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.empty-state i {
+  opacity: 0.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 767px) {
+  .my-applications-page {
+    margin-top: 20px;
+    padding: 0 12px 30px;
+  }
+
+  .page-header h2 {
+    font-size: 28px;
+  }
+
+  .application-card {
+    border-radius: 20px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+.badge {
+  padding: 6px 10px;
+  font-size: 13px;
+}

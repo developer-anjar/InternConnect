@@ -1,0 +1,22 @@
+/* HERO */
+.faq-hero {
+  background: linear-gradient(135deg, #2d3250, #424769);
+  padding: 120px 20px;
+}
+
+/* Sky Theme */
+.text-sky {
+  color: #00b4ff !important;
+}
+
+/* FAQ Boxes */
+.faq-box {
+  background: #ffffff;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.faq-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+}

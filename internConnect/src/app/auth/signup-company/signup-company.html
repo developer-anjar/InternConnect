@@ -1,0 +1,58 @@
+<div class="main-container">
+  <div class="flip-card-container">
+    <div class="flip-card-inner">
+
+      <!-- BACK SIDE / FORM -->
+      <div class="flip-card-back form-bg">
+        <div class="internal-tabs">
+          <div class="internal-tab-item" (click)="router.navigate(['/signup-student'])">Student</div>
+          <div class="internal-tab-item active">Employer / T&P</div>
+        </div>
+
+        <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+          <div class="mb-3">
+            <label class="form-label text-white">Username</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Enter username" />
+            <div class="form-error" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">
+              Username is required.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-white">Email</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter email" />
+            <div class="form-error" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+              Enter a valid email.
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+            <label class="form-label text-white">Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter password" />
+            <div class="form-error" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+              Password is required.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-white">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm password" />
+            <div class="form-error" *ngIf="signupForm.errors?.['mismatch'] && signupForm.get('confirmPassword')?.touched">
+              Passwords do not match.
+            </div>
+          </div>
+
+          <button class="custom-btn" type="submit" [disabled]="signupForm.invalid">
+            Signup
+          </button>
+
+          <p class="text-center mt-3 text-white">
+            <a routerLink="/login-company" class="switch-link">Already have an account? Login</a>
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

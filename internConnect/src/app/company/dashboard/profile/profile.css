@@ -1,0 +1,246 @@
+/* =========================
+   ROOT / PAGE
+========================= */
+.profile-container {
+  min-height: 100vh;
+  padding: 72px 40px;
+  background: #F5F7FA;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  color: #263238;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+.profile-card {
+  width: 100%;
+  max-width: 1240px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 52px 56px;
+  border: 1px solid #e1e6ef;
+  box-shadow:
+    0 30px 70px rgba(38, 166, 154, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   HEADER
+========================= */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e3e8f0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.title-wrap h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1976D2;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #26A69A;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.letter-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  box-shadow:
+    0 12px 28px rgba(25, 118, 210, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.edit-btn,
+.create-btn {
+  background: linear-gradient(135deg, #00ACC1, #26A69A);
+  color: #ffffff;
+  border: none;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 26px rgba(0, 172, 193, 0.35);
+}
+
+.edit-btn:hover,
+.create-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0, 172, 193, 0.45);
+}
+
+/* =========================
+   CONTENT GRID
+========================= */
+.profile-content {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 28px;
+}
+
+/* =========================
+   INFO CARDS
+========================= */
+.info-row {
+  grid-column: span 4;
+  background: linear-gradient(180deg, #ffffff, #f9fbfd);
+  padding: 24px 26px;
+  border-radius: 20px;
+  border: 1px solid #e3eaf2;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.info-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(#1976D2, #26A69A);
+}
+
+.info-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Medium width */
+.info-row.medium {
+  grid-column: span 6;
+}
+
+/* Full width */
+.info-row.full {
+  grid-column: span 12;
+}
+
+/* =========================
+   LABELS & TEXT
+========================= */
+.info-row label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #26A69A;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.info-row p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  color: #263238;
+}
+
+.desc {
+  white-space: pre-line;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.no-profile {
+  width: 100%;
+  max-width: 1240px;
+  padding: 72px 56px;
+  background: #ffffff;
+  border-radius: 28px;
+  text-align: center;
+  border: 1px solid #e1e6ef;
+  box-shadow:
+    0 30px 70px rgba(38, 166, 154, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.no-profile h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1976D2;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .profile-card {
+    padding: 40px;
+  }
+
+  .info-row {
+    grid-column: span 6;
+  }
+
+  .info-row.full {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-container {
+    padding: 40px 16px;
+  }
+
+  .profile-card {
+    padding: 28px 24px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .profile-content {
+    gap: 20px;
+  }
+
+  .info-row,
+  .info-row.medium,
+  .info-row.full {
+    grid-column: span 12;
+  }
+}

@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar" [class.navbar-scrolled]="isScrolled">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold text-light" routerLink="/">
+      <!-- <i class="bi bi-link-45deg me-1"></i> InternConnect -->
+      <img src="logo.png" alt="InternConnect Logo" class="logo-img">
+
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+
+         <!-- SEARCH BAR (Right Side) -->
+      <li class="nav-item ms-3 search-wrapper">
+  <i class="bi bi-search search-icon"></i>
+  <input 
+    type="text" 
+    class="form-control search-input" 
+    placeholder="{{ animatedPlaceholder }}"
+    (input)="onSearch($event)"
+  />
+</li>
+
+
+        <!-- INTERNSHIP -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/student-dashboard/internship-list" routerLinkActive="active">Internship</a>
+        </li>
+
+
+        <!-- ABOUT -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+
+        <!-- CONTACT -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Support</a>
+        </li>
+
+       
+
+        <!-- LOGIN BUTTON -->
+        <li class="nav-item">
+          <a class="btn login-btn px-3 ms-3" routerLink="/login">Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

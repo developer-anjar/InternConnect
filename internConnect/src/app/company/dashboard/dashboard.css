@@ -1,0 +1,140 @@
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  height: calc(100vh - 80px);
+  position: sticky;
+  top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 👈 pushes profile to bottom */
+}
+
+/* Main Content Area */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Menu Items */
+.list-item {
+  display: block;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.list-item:hover {
+  background-color: #e8f7ff;
+  color: #00b4ff;
+}
+
+.active-link {
+  background-color: #00b4ff !important;
+  color: white !important;
+}
+
+/* Content */
+.content-area {
+  flex-grow: 1;
+}
+
+/* ========================= */
+/* 🔥 PROFILE SECTION */
+/* ========================= */
+
+.profile-section {
+  position: relative;
+  margin-top: 10px;
+}
+
+.profile-box {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-box:hover {
+  background: #f5f7fa;
+}
+
+/* Profile Info */
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Avatar */
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #00b4ff;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Name + Role */
+.name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.role {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Dropdown */
+.profile-dropdown {
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+  width: 100%;
+  display: none;
+  z-index: 10;
+}
+
+/* Show on hover */
+.profile-box:hover .profile-dropdown {
+  display: block;
+}
+
+/* Logout Button */
+.logout-btn {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ffe5e5;
+  color: #dc3545;
+  border-color: #ffcaca;
+}

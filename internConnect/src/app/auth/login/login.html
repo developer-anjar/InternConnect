@@ -1,0 +1,54 @@
+<div class="main-container">
+  <div class="flip-card-container">
+    <div class="flip-card-inner">
+
+      <div class="flip-card-front form-bg">
+        <div class="internal-tabs">
+          <div class="internal-tab-item active">Student</div>
+          <div class="internal-tab-item" (click)="router.navigate(['/login-company'])">Employer / T&P</div>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="mb-3">
+            <label class="form-label text-white">Email</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label text-white">Password</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+            </div>
+          </div>
+
+          <div class="text-end">
+            <a href="#" class="forgot-link" (click)="openForgotPassword($event)">Forgot Password?</a>
+          </div>
+
+          <button class="btn btn-dark w-100 mt-3 custom-btn" type="submit" [disabled]="loginForm.invalid">
+            Login
+          </button>
+
+          <p class="text-center mt-3 text-white">
+            <a routerLink="/signup-student" class="switch-link">Don't have an account? Sign Up</a>
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="forgot-modal" *ngIf="forgotOpen">
+  <div class="forgot-box">
+    <h3>Reset Password</h3>
+    <p class="small">Enter your email to receive recovery instructions.</p>
+    <input type="email" class="form-control mb-3" placeholder="Email" [(ngModel)]="forgotEmail">
+    <button class="btn btn-primary w-100" (click)="sendForgotEmail()">Send Email</button>
+    <button class="btn btn-secondary w-100 mt-2" (click)="forgotOpen=false">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,217 @@
+/* Navbar background */
+.custom-navbar {
+  background-color: #2D3250;
+  padding: 10px 0;
+}
+
+/* NAVBAR FIX → keeps search bar right after logo */
+.navbar-nav {
+  margin-left: auto; /* push items right */
+}
+
+/* Move search bar close to logo */
+.navbar-nav .search-input {
+  width: 220px;
+  border-radius: 25px;
+  padding: 6px 16px;
+  border: none;
+  outline: none;
+  background-color: #424769;
+  color: #fff;
+  margin-right: 100px; /* space before Internships */
+  margin-left: 10px;  /* small space after logo */
+}
+
+/* Search bar placeholder */
+.search-input::placeholder {
+  color: #F6B179;
+  opacity: 0.8;
+}
+
+/* Focus styling */
+.search-input:focus {
+  background-color: #2D3250;
+  color: white;
+}
+
+/* Nav links */
+.nav-link {
+  color: #ffffff !important;
+  margin-left: 8px;
+}
+
+.nav-link.active {
+  color: #F6B179 !important;
+  border-bottom: 2px solid #F6B179;
+}
+
+/* Login button */
+.login-btn {
+  background-color: #F6B179;
+  color: #2D3250 !important;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* Scroll effect */
+.navbar-scrolled {
+  background-color: #424769 !important;
+  transition: 0.3s;
+}
+
+/* Mega Menu container */
+.mega-hover {
+  position: relative;
+}
+
+.mega-hover .mega-menu-box {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #2D3250;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgb(0 0 0 / 30%);
+  z-index: 20;
+  min-width: 200px;
+}
+
+.mega-hover .mega-menu-box a {
+  display: block;
+  padding: 8px 5px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.mega-hover .mega-menu-box a:hover {
+  background: #42486a;
+}
+
+/* Show menu on hover */
+.mega-hover:hover .mega-menu-box {
+  display: block;
+}
+/* Parent wrapper so icon stays inside */
+.search-wrapper {
+  position: relative;
+  margin-right: 25px; /* spacing before Internships */
+  margin-left: 12px;  /* spacing after logo */
+}
+
+/* Bigger search bar */
+.search-input {
+  width: 320px !important;   /* extended size */
+  padding-left: 38px !important; /* space for the icon */
+}
+
+/* Search icon inside input */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #F6B179;
+  font-size: 18px;
+  pointer-events: none;
+}
+/* internship */
+/* Parent must be relative */
+.mega-hover {
+  position: relative;
+}
+
+/* Show dropdown on hover */
+.mega-hover:hover .mega-menu-box {
+  display: grid;
+}
+
+/* Dropdown container */
+.mega-menu-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 400px;
+  background: #2d3250;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+  z-index: 9999;
+
+  /* 2 columns */
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+/* Link styling */
+.mega-menu-box a {
+  display: block;
+  padding: 5px 0;
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.mega-menu-box a:hover {
+  color: #fbb179;
+}
+/* Vertical dropdown ONLY for Courses */
+.course-menu-box {
+  width: 220px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+.logo-img{
+  width: 70px;
+}
+
+/* Show on hover */
+.mega-hover:hover .course-menu-box {
+  display: flex;
+}
+/* Parent relative */
+.login-hover {
+  position: relative;
+}
+
+/* Show dropdown on hover */
+.login-hover:hover .login-dropdown-box {
+  display: block;
+   display: grid;
+}
+
+/* Dropdown box */
+.login-dropdown-box {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #2d3250;
+  width: 220px;
+  padding: 12px 0;
+  border-radius: 6px;
+  color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+  display: none;
+  white-space: nowrap;
+  z-index: 999;
+}
+
+/* Dropdown links */
+.login-dropdown-box a {
+  display: block;
+  padding: 10px 20px;
+color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-dropdown-box a:hover {
+   background: #c5c5f245;
+   display: block;
+   grid-template-columns: 1fr 1fr;
+   border-radius: 4px;
+}

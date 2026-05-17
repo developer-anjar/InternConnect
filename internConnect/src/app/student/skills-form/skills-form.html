@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h2>Add/Edit Skills</h2>
+  <button type="button" class="btn btn-link p-0 mb-3" (click)="router.navigate(['/student-dashboard'])">← Back</button>
+  <form [formGroup]="skillsForm" (ngSubmit)="saveSkills()">
+    <div class="mb-3">
+      <label>Skills (comma-separated)</label>
+      <textarea rows="4" class="form-control" formControlName="skills" placeholder="e.g., HTML, CSS, JavaScript" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!skillsForm.valid">Save & Next</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="router.navigate(['/student-dashboard'])">Skip</button>
+  </form>
+</div>

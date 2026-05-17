@@ -1,0 +1,9 @@
+.mt-50{
+    margin-top: 50px;
+}
+
+/* Main content wrapper to prevent navbar overlap */
+.main-content {
+    padding-top: 20px;
+    min-height: calc(100vh - 60px);
+}

@@ -1,0 +1,49 @@
+<div class="ai-resume-generator container">
+  <div class="d-flex align-items-center mb-4">
+    <button type="button" class="btn btn-link p-0 me-3" routerLink="/student-dashboard">
+      <i class="bi bi-arrow-left"></i> Back to Dashboard
+    </button>
+    <h2 class="mb-0">AI Resume Generator</h2>
+  </div>
+
+  <div class="alert alert-info">
+    <i class="bi bi-magic"></i>
+    Generate a professional resume tailored to your profile using AI. Ensure your profile is complete for the best results.
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Your Profile Data</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Name:</strong> {{ studentProfile?.fullName || 'Not provided' }}</p>
+          <p><strong>Education:</strong> {{ education.length }} entries</p>
+          <p><strong>Skills:</strong> {{ skills || 'None' }}</p>
+          <p><strong>Projects:</strong> {{ projects.length }} entries</p>
+          <button class="btn btn-primary" (click)="generateResume()" [disabled]="loading">
+            <i class="bi bi-robot"></i> {{ loading ? 'Generating...' : 'Generate Resume' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between">
+          <h5>Generated Resume</h5>
+          <button class="btn btn-sm btn-outline-primary" (click)="downloadResume()" *ngIf="generatedResume">
+            <i class="bi bi-download"></i> Download
+          </button>
+        </div>
+        <div class="card-body">
+          <pre *ngIf="generatedResume; else noResume" class="resume-content">{{ generatedResume }}</pre>
+          <ng-template #noResume>
+            <p class="text-muted">Click "Generate Resume" to create your AI-powered resume.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

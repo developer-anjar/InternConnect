@@ -1,0 +1,51 @@
+/* Hero Section */
+.why-hero {
+  background: linear-gradient(135deg, #2d3250, #424769);
+  padding: 120px 20px;
+}
+
+/* Sky Text */
+.text-sky {
+  color: #00b4ff !important;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: #ffffff;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Value Boxes */
+.value-box {
+  background: #ffffff;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* CTA Section */
+.cta-section {
+  background: #2d3250;
+}
+
+.btn-sky {
+  background-color: #00b4ff;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-sky:hover {
+  background-color: #0096c7;
+  transform: scale(1.05);
+}

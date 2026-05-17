@@ -1,0 +1,182 @@
+<div class="internship-detail" *ngIf="internship && !loading">
+
+  <button type="button" class="btn btn-link p-0 mb-3" routerLink="/student-dashboard/internship-list">← Back</button>
+  <!-- HEADER -->
+  <div class="header">
+
+    <h2>{{ internship.internshipTitle }}</h2>
+
+    <p class="company">
+      {{ internship.companyName }} • {{ internship.industryDomain }}
+    </p>
+
+    <span class="badge" [ngClass]="internship.internshipType?.toLowerCase()">
+      {{ internship.internshipType }}
+    </span>
+
+  </div>
+
+
+  <!-- BASIC INFO -->
+  <div class="info-grid">
+
+    <div><strong>📍 Location:</strong> {{ internship.companyLocation }}</div>
+
+    <div><strong>⏰ Working Hours:</strong> {{ internship.workingHours }}</div>
+
+    <div><strong>📆 Duration:</strong> {{ internship.duration }} Months</div>
+
+    <div><strong>💰 Stipend:</strong> ₹{{ internship.stipend }}</div>
+
+    <div><strong>🚀 Start Date:</strong> {{ internship.startDate | date }}</div>
+
+    <div><strong>👥 Openings:</strong> {{ internship.openings }}</div>
+
+    <div><strong>📅 Apply Before:</strong> {{ internship.lastDate | date }}</div>
+
+    <div><strong>👁 Views:</strong> {{ internship.views }}</div>
+
+  </div>
+
+
+  <!-- ABOUT COMPANY -->
+  <section class="section">
+
+    <h3>🏢 About {{ internship.companyName }}</h3>
+
+    <p>{{ internship.aboutCompany }}</p>
+
+  </section>
+
+
+  <!-- ROLE -->
+  <section class="section">
+
+    <h3>📋 Job Description</h3>
+    <p>{{ internship.jobDescription }}</p>
+
+    <h4>Daily Responsibilities</h4>
+    <p>{{ internship.dailyTasks }}</p>
+
+    <h4>Tools & Technologies</h4>
+    <p>{{ internship.toolsUsed || 'Not specified' }}</p>
+
+    <h4>Projects</h4>
+    <p>{{ internship.projects || 'Not specified' }}</p>
+
+  </section>
+
+
+  <!-- ELIGIBILITY -->
+  <section class="section">
+
+    <h3>🎯 Eligibility</h3>
+
+    <ul>
+      <li><strong>Skills:</strong> {{ internship.skills }}</li>
+      <li><strong>Qualification:</strong> {{ internship.qualification }}</li>
+      <li><strong>Year:</strong> {{ internship.year || 'Any' }}</li>
+      <li><strong>Experience:</strong> {{ internship.experience || 'Fresher' }}</li>
+      <li><strong>Language:</strong> {{ internship.language || 'Any' }}</li>
+    </ul>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+  <section class="section">
+
+    <h3>💎 Benefits</h3>
+
+    <ul>
+      <li>💰 Payment: {{ internship.paymentMode }}</li>
+      <li *ngIf="internship.certificate">📜 Certificate</li>
+      <li *ngIf="internship.lor">✉️ LOR</li>
+      <li *ngIf="internship.ppo">🏢 PPO</li>
+      <li *ngIf="internship.benefits">{{ internship.benefits }}</li>
+    </ul>
+
+  </section>
+
+
+  <!-- APPLICATION -->
+  <section class="section">
+
+    <h3>📝 Application</h3>
+
+    <p><strong>Selection Process:</strong>
+      {{ internship.process || 'Resume Shortlisting' }}
+    </p>
+
+    <p><strong>HR Email:</strong> {{ internship.hrEmail }}</p>
+
+    <p><strong>Apply Link:</strong>
+      <a [href]="internship.applyLink" target="_blank">
+        {{ internship.applyLink }}
+      </a>
+    </p>
+
+  </section>
+
+
+  <!-- ACTION -->
+  <div class="apply-box">
+
+    <button class="apply-btn"
+            [disabled]="applied"
+            (click)="apply()">
+
+      {{ applied ? 'Applied ✔️' : 'Apply Now 🚀' }}
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- CONFIRMATION MODAL -->
+<div class="modal fade" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Application</h5>
+        <button type="button" class="close" (click)="cancelApply()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h6>Student Details</h6>
+            <p><strong>Name:</strong> {{ studentProfile?.fullName || 'Not provided' }}</p>
+            <p><strong>Skills:</strong> {{ studentProfile?.skills || 'Not provided' }}</p>
+            <p><strong>Resume:</strong> {{ getResumeStatus() }}</p>
+          </div>
+          <div class="col-md-6">
+            <h6>Internship Details</h6>
+            <p><strong>Title:</strong> {{ internship?.internshipTitle }}</p>
+            <p><strong>Company:</strong> {{ internship?.companyName }}</p>
+            <p><strong>Location:</strong> {{ internship?.companyLocation }}</p>
+          </div>
+        </div>
+        <div class="alert alert-info mt-3">
+          <strong>Note:</strong> Please ensure your profile is complete and resume is uploaded before applying.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelApply()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="confirmApply()">Confirm Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACKDROP -->
+<div class="modal-backdrop fade show" *ngIf="showModal"></div>
+
+
+<!-- LOADING -->
+<div *ngIf="loading" class="loading">
+  Loading internship details...
+</div>

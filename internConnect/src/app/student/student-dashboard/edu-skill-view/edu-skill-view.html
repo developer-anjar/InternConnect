@@ -1,0 +1,51 @@
+
+<div class="edu-skill-page mt-55">
+  <div class="page-header mb-4">
+    <h2>Education & Skills</h2>
+    <p class="text-muted">Showcase your academic background and technical expertise</p>
+  </div>
+
+  <div class="card shadow-sm border-0" *ngIf="!loading">
+    <!-- EDUCATION -->
+    <div class="card-body p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="section-title">Education</h3>
+        <button class="btn btn-outline-primary btn-sm" (click)="editEducation()">Edit</button>
+      </div>
+
+      <div class="edu-list" *ngIf="education.length > 0; else noEducation">
+        <div class="edu-box" *ngFor="let edu of education">
+          <div class="edu-header">
+            <p class="course">{{ edu.course }}</p>
+            <p class="inst">{{ edu.institute }}</p>
+          </div>
+          <p class="meta">{{ edu.duration }} | {{ edu.score }}</p>
+        </div>
+      </div>
+      <ng-template #noEducation>
+        <p class="text-muted">No education details added yet.</p>
+      </ng-template>
+
+      <hr>
+
+      <!-- SKILLS -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="section-title">Skills</h3>
+        <button class="btn btn-outline-primary btn-sm" (click)="editSkills()">Edit</button>
+      </div>
+
+      <div class="skills" *ngIf="skills.length > 0; else noSkills">
+        <span class="skill" *ngFor="let skill of skills">
+          {{ skill }}
+        </span>
+      </div>
+      <ng-template #noSkills>
+        <p class="text-muted">No skills added yet.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="text-center mt-5">
+    <p>Loading...</p>
+  </div>
+</div>

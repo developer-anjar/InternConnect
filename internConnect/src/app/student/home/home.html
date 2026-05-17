@@ -1,0 +1,177 @@
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+  <div class="container text-center hero-content">
+
+    <h1 class="hero-title animate__animated animate__fadeInDown">
+      Find Internships That Match <span>Your Skills</span>
+    </h1>
+
+    <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+      Discover opportunities, connect with companies, and kickstart your career.
+    </p>
+
+    <!-- CTA BUTTON -->
+    <button
+      class="explore-btn animate__animated animate__fadeInUp animate__delay-2s"
+      routerLink="/student-dashboard/internship-list"
+      type="button">
+      Explore Now
+    </button>
+
+    <!-- SEARCH HUB -->
+    <div
+      class="search-hub animate__animated animate__fadeInUp animate__delay-3s"
+      [class.open]="showSearch">
+
+      <div class="search-input">
+        <span class="icon">🔍</span>
+        <input type="text" placeholder="Search internships..." />
+      </div>
+
+      <select>
+        <option value="" disabled selected>Location</option>
+        <option>Pune</option>
+        <option>Mumbai</option>
+        <option>Bangalore</option>
+      </select>
+
+      <select>
+        <option value="" disabled selected>Category</option>
+        <option>Web Development</option>
+        <option>Marketing</option>
+        <option>Data Science</option>
+      </select>
+
+      <button type="button">Search</button>
+    </div>
+  </div>
+
+  <!-- ================= OPENINGS STRIP ================= -->
+  <div class="openings-strip">
+    <div class="openings-text">
+      <span class="big-number animate__animated animate__fadeInLeft">10K+</span>
+      <span class="small-text animate__animated animate__fadeInRight">
+        Openings every day
+      </span>
+    </div>
+
+    <!-- COMPANY SLIDER -->
+    <div class="floating-slider inline-slider">
+      <div class="slider-track animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="slide">Google</div>
+        <div class="slide">Infosys</div>
+        <div class="slide">TCS</div>
+        <div class="slide">Internshala</div>
+        <div class="slide">Wipro</div>
+        <div class="slide">Capgemini</div>
+        <div class="slide">Google</div>
+        <div class="slide">Infosys</div>
+        <div class="slide">TCS</div>
+        <div class="slide">Internshala</div>
+        <div class="slide">Wipro</div>
+        <div class="slide">Capgemini</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EMPLOYER POSTER ================= -->
+<div class="poster-container mt-5">
+  <div class="row align-items-center">
+
+    <div class="col-md-5 text-center">
+      <img
+        src="Poster-img.png"
+        class="poster-img"
+        alt="Employer"
+        loading="lazy"
+        (error)="onImageError($event)">
+    </div>
+
+    <div class="col-md-7 text-light">
+      <button class="poster-tag">FOR EMPLOYERS</button>
+
+      <h2 class="fw-bold mt-3">
+        Looking to hire freshers and interns?
+      </h2>
+
+      <p class="mt-3">
+        Access India’s growing talent pool with
+        <strong>AI-matched profiles</strong> and smart filters to hire faster.
+      </p>
+
+      <button
+        class="poster-btn mt-3"
+        (click)="goToPostPage()"
+        type="button"
+        routerLink="/dashboard/add-internships"
+        >
+        Post now for free →
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SUCCESS STORIES ================= -->
+<div class="success-wrapper">
+  <h2 class="success-title">
+    Success stories on InternConnect 💙
+  </h2>
+
+  <p class="success-subtitle">
+    See how students got hired using our platform
+  </p>
+
+  <div
+    id="reviewCarousel"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-pause="hover">
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="success-row">
+          <div class="story-card">
+            <h3>Landed my first internship!</h3>
+            <p>InternConnect helped me connect with the right company.</p>
+          </div>
+          <div class="story-card">
+            <h3>Dream job achieved</h3>
+            <p>I got placed in Amazon using InternConnect.</p>
+          </div>
+          <div class="story-card">
+            <h3>Very helpful platform</h3>
+            <p>Great for beginners. Smooth experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="success-row">
+          <div class="story-card">
+            <h3>Fast hiring!</h3>
+            <p>Got shortlisted in just 1 day!</p>
+          </div>
+          <div class="story-card">
+            <h3>Perfect internship</h3>
+            <p>Selected for Web Development role.</p>
+          </div>
+          <div class="story-card">
+            <h3>Easy to use</h3>
+            <p>Very smooth UI and application flow.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>

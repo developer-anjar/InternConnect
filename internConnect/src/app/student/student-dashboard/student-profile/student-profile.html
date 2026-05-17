@@ -1,0 +1,254 @@
+<div class="student-profile-page mt-5" *ngIf="!loading; else loadingTpl">
+  <div class="top-card card shadow-sm border-0 mb-4">
+    <div class="card-body p-4">
+      <div class="row align-items-center gx-4">
+        <div class="col-auto">
+          <div class="profile-avatar bg-sky text-white">
+            {{ getInitials(student?.fullName || 'Student') }}
+          </div>
+        </div>
+
+        <div class="col">
+          <p class="text-uppercase mb-1 text-primary small fw-bold">Student Profile</p>
+          <h2 class="mb-1">{{ student?.fullName || 'Student Name' }}</h2>
+          <p class="mb-1 text-muted">{{ student?.email || 'No email available' }}</p>
+          <p class="mb-0 text-secondary profile-summary">
+            {{ student?.about || 'A concise student headline goes here. Update your profile to share your skills and goals.' }}
+          </p>
+        </div>
+
+        <div class="col-auto text-end">
+          <button class="btn btn-outline-primary me-2" (click)="logout()">Logout</button>
+          <button class="btn btn-primary" [routerLink]="['/student-profile-form']">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gx-4 gy-4">
+    <div class="col-lg-7">
+      <div class="card info-card shadow-sm border-0 mb-4">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h5 class="card-title mb-0">Profile Details</h5>
+            <span class="badge bg-sky-light text-sky">Quick view</span>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="detail-item">
+                <span class="label">Full Name</span>
+                <span class="value">{{ student?.fullName || '-' }}</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="detail-item">
+                <span class="label">Date of Birth</span>
+                <span class="value">{{ student?.dateOfBirth || '-' }}</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="detail-item">
+                <span class="label">Gender</span>
+                <span class="value">{{ student?.gender || '-' }}</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="detail-item">
+                <span class="label">City</span>
+                <span class="value">{{ student?.city || '-' }}</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="detail-item">
+                <span class="label">State</span>
+                <span class="value">{{ student?.state || '-' }}</span>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="detail-item detail-about">
+                <span class="label">About</span>
+                <span class="value">{{ student?.about || 'Add a short introduction to share your goals with employers.' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card info-card shadow-sm border-0 mb-4">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h5 class="card-title mb-0">Education & Skills</h5>
+            <a class="small text-primary" [routerLink]="['/student-dashboard/education-skills']">View full</a>
+          </div>
+          <p class="mb-0 text-secondary">
+            {{ student?.about ? (student.about | slice:0:140) + (student.about.length > 140 ? '...' : '') : 'Complete your education and skills section to highlight your academic strengths, certifications, and technical tools.' }}
+          </p>
+        </div>
+      </div>
+
+      <div class="card info-card shadow-sm border-0">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h5 class="card-title mb-0">Recent Applications</h5>
+            <a class="small text-primary" [routerLink]="['/student-dashboard/my-applications']">See all</a>
+          </div>
+
+          <ng-container *ngIf="recentApplications.length; else noApps">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item recent-item" *ngFor="let application of recentApplications">
+                <div>
+                  <h6 class="mb-1">{{ getApplicationTitle(application) }}</h6>
+                  <p class="mb-0 text-muted small">{{ application?.status || 'Pending' }} · {{ application?.companyName || application?.internshipName || 'Company' }}</p>
+                </div>
+                <span class="badge bg-light text-sky">{{ application?.status || 'Pending' }}</span>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-template #noApps>
+            <div class="text-muted small">No recent applications yet. Browse internships to apply.</div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="card action-card shadow-sm border-0 mb-4">
+        <div class="card-body p-4">
+          <h5 class="card-title mb-4">
+            <i class="bi bi-lightning-charge text-warning me-2"></i>
+            Quick Actions
+          </h5>
+
+          <!-- Main Actions Row -->
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift" [routerLink]="['/student-dashboard/internship-list']">
+                <div class="card-body text-center p-4">
+                  <div class="tile-icon mb-3">
+                    <i class="bi bi-search text-primary"></i>
+                  </div>
+                  <h6 class="mb-2 text-primary">Browse Internships</h6>
+                  <p class="small text-muted mb-0">Find your next opportunity</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift" [routerLink]="['/student-dashboard/my-applications']">
+                <div class="card-body text-center p-4">
+                  <div class="tile-icon mb-3">
+                    <i class="bi bi-file-earmark-check text-success"></i>
+                  </div>
+                  <h6 class="mb-2 text-success">My Applications</h6>
+                  <p class="small text-muted mb-0">Track your progress</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift" [routerLink]="['/student-dashboard/student-profile']">
+                <div class="card-body text-center p-4">
+                  <div class="tile-icon mb-3">
+                    <i class="bi bi-person-circle text-info"></i>
+                  </div>
+                  <h6 class="mb-2 text-info">View Profile</h6>
+                  <p class="small text-muted mb-0">Complete your details</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- AI Tools Section -->
+          <div class="ai-section mb-4">
+            <h6 class="text-muted mb-3">
+              <i class="bi bi-robot me-2"></i>
+              AI-Powered Tools
+            </h6>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift ai-tile" [routerLink]="['/student-dashboard/ai-recommender']">
+                  <div class="card-body text-center p-3">
+                    <div class="tile-icon mb-2">
+                      <i class="bi bi-stars text-warning"></i>
+                    </div>
+                    <h6 class="mb-1 text-warning">AI Recommender</h6>
+                    <p class="small text-muted mb-0">Personalized matches</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift ai-tile" [routerLink]="['/student-dashboard/ai-resume-generator']">
+                  <div class="card-body text-center p-3">
+                    <div class="tile-icon mb-2">
+                      <i class="bi bi-file-earmark-text text-danger"></i>
+                    </div>
+                    <h6 class="mb-1 text-danger">Resume Generator</h6>
+                    <p class="small text-muted mb-0">AI-crafted resumes</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-12">
+                <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift ai-tile" [routerLink]="['/student-dashboard/ai-chatbot']">
+                  <div class="card-body text-center p-3">
+                    <div class="tile-icon mb-2">
+                      <i class="bi bi-chat-dots text-secondary"></i>
+                    </div>
+                    <h6 class="mb-1 text-secondary">Career Assistant</h6>
+                    <p class="small text-muted mb-0">Get AI career guidance</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Management -->
+          <div class="profile-section">
+            <h6 class="text-muted mb-3">
+              <i class="bi bi-gear me-2"></i>
+              Profile Management
+            </h6>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift" [routerLink]="['/student-dashboard/education-skills']">
+                  <div class="card-body text-center p-3">
+                    <div class="tile-icon mb-2">
+                      <i class="bi bi-mortarboard text-primary"></i>
+                    </div>
+                    <h6 class="mb-1 text-primary">Education & Skills</h6>
+                    <p class="small text-muted mb-0">Update qualifications</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a class="action-tile card h-100 text-decoration-none border-0 shadow-sm hover-lift" [routerLink]="['/student-dashboard/project-resume']">
+                  <div class="card-body text-center p-3">
+                    <div class="tile-icon mb-2">
+                      <i class="bi bi-folder text-info"></i>
+                    </div>
+                    <h6 class="mb-1 text-info">Projects & Resume</h6>
+                    <p class="small text-muted mb-0">Showcase your work</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card support-card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h5 class="card-title mb-3">Need help?</h5>
+          <p class="text-secondary mb-3">Use quick actions to navigate your dashboard and keep your profile up to date.</p>
+          <a [routerLink]="['/student-dashboard/student-profile']" class="btn btn-outline-primary btn-sm">Open Profile Overview</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="d-flex justify-content-center align-items-center py-5">
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+</ng-template>
+

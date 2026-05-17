@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h2>Upload Resume</h2>
+  <button type="button" class="btn btn-link p-0 mb-3" (click)="router.navigate(['/student-dashboard'])">← Back</button>
+  <form [formGroup]="resumeForm" (ngSubmit)="saveResume()">
+    <div class="mb-3">
+      <label>Resume File</label>
+      <input type="file" class="form-control" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload & Finish</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="router.navigate(['/student-dashboard'])">Skip</button>
+  </form>
+</div>

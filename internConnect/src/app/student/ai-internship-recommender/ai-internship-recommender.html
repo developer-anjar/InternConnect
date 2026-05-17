@@ -1,0 +1,75 @@
+<div class="ai-recommender container">
+  <div class="d-flex align-items-center mb-4">
+    <button type="button" class="btn btn-link p-0 me-3" routerLink="/student-dashboard">
+      <i class="bi bi-arrow-left"></i> Back to Dashboard
+    </button>
+    <h2 class="mb-0">AI Internship Recommender</h2>
+  </div>
+
+  <div class="alert alert-info">
+    <i class="bi bi-robot"></i>
+    Based on your profile, skills, education, and resume, here are personalized internship recommendations tailored just for you.
+  </div>
+
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-3">Analyzing your profile and finding the best matches...</p>
+  </div>
+
+  <div *ngIf="!loading && recommendedInternships.length === 0" class="text-center py-5">
+    <i class="bi bi-search text-muted" style="font-size: 3rem;"></i>
+    <h4 class="mt-3 text-muted">No recommendations found</h4>
+    <p>Please complete your profile, education, skills, and upload your resume for better personalized suggestions.</p>
+    <button class="btn btn-primary" routerLink="/student-dashboard/student-profile">Complete Profile</button>
+  </div>
+
+  <div class="row" *ngIf="!loading && recommendedInternships.length > 0">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let internship of recommendedInternships">
+      <div class="card h-100 shadow-sm recommendation-card">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">{{ internship.internshipTitle }}</h5>
+        </div>
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">{{ internship.companyName }}</h6>
+
+          <div class="mb-2">
+            <i class="bi bi-geo-alt-fill text-danger"></i>
+            <strong>Location:</strong> {{ internship.companyLocation }}
+          </div>
+
+          <div class="mb-2">
+            <i class="bi bi-cash text-success"></i>
+            <strong>Stipend:</strong> ₹{{ internship.stipend }}
+          </div>
+
+          <div class="mb-2" *ngIf="internship.duration">
+            <i class="bi bi-calendar text-info"></i>
+            <strong>Duration:</strong> {{ internship.duration }} Months
+          </div>
+
+          <div class="mb-2" *ngIf="internship.openings">
+            <i class="bi bi-people text-warning"></i>
+            <strong>Openings:</strong> {{ internship.openings }}
+          </div>
+
+          <div class="mb-3" *ngIf="internship.skills">
+            <i class="bi bi-tools text-secondary"></i>
+            <strong>Skills:</strong> {{ internship.skills }}
+          </div>
+
+          <button class="btn btn-primary w-100" (click)="viewInternshipDetails(internship.internshipId)">
+            <i class="bi bi-eye"></i> View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4" *ngIf="!loading">
+    <button class="btn btn-outline-secondary" routerLink="/student-dashboard/internship-list">
+      <i class="bi bi-list"></i> Browse All Internships
+    </button>
+  </div>
+</div>

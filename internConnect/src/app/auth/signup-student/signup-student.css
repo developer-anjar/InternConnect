@@ -1,0 +1,118 @@
+/* ========== MAIN CONTAINER ========== */
+.main-container {
+  margin-top: 40px;
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========== SIGNUP BOX (SINGLE CARD) ========== */
+.signup-box {
+  width: 100%;
+  max-width: 430px;
+  background: #3d426b;
+  padding: 35px 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+/* ========== INTERNAL TABS ========== */
+.internal-tabs {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.internal-tab-item {
+  color: #dcdcec;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  flex: 1;
+  text-align: center;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.internal-tab-item.active,
+.internal-tab-item:hover {
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ========== FORM INPUTS ========== */
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px !important;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(80, 80, 130, 0.4);
+}
+
+/* LABELS */
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f3f4ff;
+}
+
+/* ERRORS */
+.form-error {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.custom-btn {
+  background: #8b7473;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 0;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  transition: 0.3s;
+}
+
+.custom-btn:hover:enabled {
+  background: #7a6564;
+  cursor: pointer;
+}
+
+.custom-btn:disabled {
+  background: #a89a98;
+  cursor: not-allowed;
+}
+
+/* LINKS */
+.switch-link {
+  color: #e8e9f9;
+  text-decoration: underline;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.switch-link:hover {
+  color: #fff;
+}

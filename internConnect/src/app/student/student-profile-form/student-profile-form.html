@@ -1,0 +1,52 @@
+<div class="profile-container">
+  <h2>Student Profile</h2>
+  <button type="button" class="btn btn-link p-0 mb-3" routerLink="/student-dashboard/student-profile">← Back</button>
+
+  <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+
+    <div class="mb-3">
+      <label>Student ID</label>
+      <input class="form-control" formControlName="studentId" readonly>
+   </div>
+
+    <div class="mb-3">
+      <label>Full Name</label>
+      <input type="text" class="form-control" formControlName="fullName">
+    </div>
+
+    <div class="mb-3">
+      <label>Date of Birth</label>
+      <input type="date" class="form-control" formControlName="dateOfBirth">
+    </div>
+
+    <div class="mb-3">
+      <label>Gender</label>
+      <select class="form-control" formControlName="gender">
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>City</label>
+      <input type="text" class="form-control" formControlName="city">
+    </div>
+
+    <div class="mb-3">
+      <label>State</label>
+      <input type="text" class="form-control" formControlName="state">
+    </div>
+
+    <div class="mb-3">
+      <label>About</label>
+      <textarea rows="4" class="form-control" formControlName="about"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">
+      {{ isEditMode ? 'Update & Next' : 'Save & Next' }}
+    </button>
+
+  </form>
+</div>

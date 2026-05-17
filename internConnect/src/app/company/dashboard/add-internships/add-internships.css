@@ -1,0 +1,298 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.form-wrap {
+  max-width: 760px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 40px 44px;
+  border-radius: 24px;
+  font-family: "Inter", sans-serif;
+  color: #263238;
+  box-shadow:
+    0 24px 60px rgba(38, 166, 154, 0.12),
+    0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   TITLE
+========================= */
+.form-wrap h2 {
+  margin: 0 0 28px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1976D2;
+  letter-spacing: -0.4px;
+}
+
+/* =========================
+   FORM LAYOUT
+========================= */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+}
+
+/* Make long fields full width */
+textarea,
+.checkbox-group,
+button {
+  grid-column: span 2;
+}
+
+/* =========================
+   LABELS
+========================= */
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #26A69A;
+  text-transform: uppercase;
+}
+
+label small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #6b7280;
+}
+
+.required {
+  color: #1976D2;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+textarea,
+select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 14px;
+  border: 1px solid #dce4ec;
+  background: #f9fbfd;
+  font-family: inherit;
+  color: #263238;
+  transition: all 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9aa5b1;
+}
+
+/* Focus */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #26A69A;
+  box-shadow: 0 0 0 4px rgba(38, 166, 154, 0.15);
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* =========================
+   CHECKBOX GROUP
+========================= */
+.checkbox-group {
+  display: flex;
+  gap: 28px;
+  margin-top: 6px;
+  padding: 14px 16px;
+  background: #f9fbfd;
+  border-radius: 14px;
+  border: 1px solid #e3eaf2;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #263238;
+  text-transform: none;
+}
+
+.checkbox-group input {
+  width: auto;
+  accent-color: #26A69A;
+}
+
+/* =========================
+   BUTTON
+========================= */
+button {
+  margin-top: 12px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00ACC1, #26A69A);
+  color: #ffffff;
+  transition: all 0.25s ease;
+  box-shadow: 0 12px 28px rgba(0, 172, 193, 0.35);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 172, 193, 0.45);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   ERROR TEXT
+========================= */
+small {
+  color: #dc2626;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* =========================
+   SPACING UTIL
+========================= */
+.mt-50 {
+  margin-top: 50px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .form-wrap {
+    padding: 32px 26px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  textarea,
+  .checkbox-group,
+  button {
+    grid-column: span 1;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+.form-wrap {
+  max-width: 1000px;
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.internship-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+.card h3 {
+  margin-bottom: 20px;
+  color: #2b3a55;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.grid textarea {
+  grid-column: span 2;
+  min-height: 90px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #4a7cff;
+  box-shadow: 0 0 0 2px rgba(74,124,255,.15);
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 20px;
+  grid-column: span 2;
+}
+
+.submit-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background: #4a7cff;
+  color: #fff;
+  border: none;
+  padding: 12px 35px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .grid textarea{
+    grid-column: span 1;
+  }
+}

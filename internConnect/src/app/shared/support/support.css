@@ -1,0 +1,41 @@
+/* HERO SECTION */
+.contact-hero {
+  background: linear-gradient(135deg, #2d3250, #424769);
+  padding: 130px 20px;
+}
+
+/* Sky Accent */
+.text-sky {
+  color: #00b4ff !important;
+}
+
+/* Cards */
+.card {
+  border-radius: 18px !important;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Theme */
+.btn-sky {
+  background-color: #00b4ff;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-sky:hover {
+  background-color: #0096c7;
+  transform: scale(1.05);
+}
+
+/* Contact Form */
+.contact-form img {
+  max-width: 100%;
+  border-radius: 12px;
+}
