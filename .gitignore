@@ -1,0 +1,71 @@
+# =========================
+# FRONTEND (Angular)
+# =========================
+
+internConnect/node_modules/
+internConnect/dist/
+internConnect/.angular/
+internConnect/out-tsc/
+
+# Angular cache
+.angular/cache/
+
+# =========================
+# BACKEND (Spring Boot)
+# =========================
+
+internConnect Backend/target/
+
+# Secret properties
+internConnect Backend/src/main/resources/application-secret.properties
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# IDE FILES
+# =========================
+
+.vscode/
+.idea/
+.settings/
+
+# Eclipse / STS
+*.classpath
+*.project
+
+# =========================
+# LOGS
+# =========================
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# TEMP FILES
+# =========================
+
+tmp/
+temp/
+
+# =========================
+# SYSTEM FILES
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# COVERAGE / CACHE
+# =========================
+
+coverage/
+.angular/cache/
+
+# =========================
+# OPTIONAL
+# =========================
+
+uploads/
