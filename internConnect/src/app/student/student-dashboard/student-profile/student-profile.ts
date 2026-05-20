@@ -16,8 +16,8 @@ export class StudentProfile implements OnInit {
   recentApplications: any[] = [];
   loading = true;
 
-  private profileApi = 'http://localhost:8080/api/student-profile';
-  private applicationsApi = 'http://localhost:8080/api/student/internship/applications';
+  private profileApi = 'http://internconnect-5n7j.onrender.com/api/student-profile';
+  private applicationsApi = 'http://internconnect-5n7j.onrender.com/api/student/internship/applications';
 
   constructor(
     private http: HttpClient,

@@ -43,7 +43,7 @@ export class Login implements OnInit {
       Swal.fire('Error', 'Please enter your email', 'error');
       return;
     }
-    this.http.post('http://localhost:8080/api/student/forgot-password', { email: this.forgotEmail }).subscribe({
+    this.http.post('http://internconnect-5n7j.onrender.com/api/student/forgot-password', { email: this.forgotEmail }).subscribe({
       next: () => { Swal.fire('Success', 'Password reset email sent!', 'success'); this.forgotOpen = false; },
       error: () => { Swal.fire('Error', 'Failed to send reset link', 'error'); }
     });
@@ -52,7 +52,7 @@ export class Login implements OnInit {
  onLogin() {
   if (this.loginForm.valid) {
 
-    this.http.post('http://localhost:8080/api/student/login', this.loginForm.value)
+    this.http.post('http://internconnect-5n7j.onrender.com/api/student/login', this.loginForm.value)
       .subscribe({
         next: (res: any) => {
 

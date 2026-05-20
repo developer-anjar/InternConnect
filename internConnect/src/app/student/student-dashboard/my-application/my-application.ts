@@ -21,7 +21,7 @@ export class MyApplication implements OnInit {
   applications: any[] = [];
   loading = true;
 
-  API_URL = 'http://localhost:8080/api/student/internship/applications';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/student/internship/applications';
 
   ngOnInit(): void {
 

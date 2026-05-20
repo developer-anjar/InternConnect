@@ -21,7 +21,7 @@ export class AddInternships implements OnInit {
   route = inject(ActivatedRoute);
   auth = inject(Auth);
 
-  API_URL = 'http://localhost:8080/api/company/internship';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/company/internship';
 
   form!: FormGroup;
   isEditMode = false;

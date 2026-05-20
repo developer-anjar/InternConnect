@@ -23,12 +23,12 @@ export class AiResumeGenerator implements OnInit {
   generatedResume: string = '';
   loading = false;
 
-  API_URL = 'http://localhost:8080/api/student-profile';
-  EDUCATION_API = 'http://localhost:8080/api/education';
-  SKILLS_API = 'http://localhost:8080/api/skills';
-  PROJECTS_API = 'http://localhost:8080/api/projects';
-  RESUME_API = 'http://localhost:8080/api/resume';
-  GENERATE_API = 'http://localhost:8080/api/ai/generate-resume';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/student-profile';
+  EDUCATION_API = 'http://internconnect-5n7j.onrender.com/api/education';
+  SKILLS_API = 'http://internconnect-5n7j.onrender.com/api/skills';
+  PROJECTS_API = 'http://internconnect-5n7j.onrender.com/api/projects';
+  RESUME_API = 'http://internconnect-5n7j.onrender.com/api/resume';
+  GENERATE_API = 'http://internconnect-5n7j.onrender.com/api/ai/generate-resume';
 
   constructor(
     private http: HttpClient,

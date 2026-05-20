@@ -23,7 +23,7 @@ export class Applications implements OnInit {
   showModal = false;
   selectedApplication: any = null;
 
-  API_URL = 'http://localhost:8080/api/company/applications';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/company/applications';
 
   ngOnInit(): void {
 
@@ -54,11 +54,11 @@ export class Applications implements OnInit {
     // For each student, fetch all their data using forkJoin
     const studentDataObservables = studentIds.map(studentId => {
       return forkJoin({
-        profile: this.http.get<any>(`http://localhost:8080/api/student-profile/${studentId}`),
-        education: this.http.get<any[]>(`http://localhost:8080/api/education/${studentId}`),
-        skills: this.http.get<any>(`http://localhost:8080/api/skills/${studentId}`),
-        projects: this.http.get<any[]>(`http://localhost:8080/api/projects/${studentId}`),
-        resume: this.http.get<any>(`http://localhost:8080/api/resume/${studentId}`)
+        profile: this.http.get<any>(`http://internconnect-5n7j.onrender.com/api/student-profile/${studentId}`),
+        education: this.http.get<any[]>(`http://internconnect-5n7j.onrender.com/api/education/${studentId}`),
+        skills: this.http.get<any>(`http://internconnect-5n7j.onrender.com/api/skills/${studentId}`),
+        projects: this.http.get<any[]>(`http://internconnect-5n7j.onrender.com/api/projects/${studentId}`),
+        resume: this.http.get<any>(`http://internconnect-5n7j.onrender.com/api/resume/${studentId}`)
       });
     });
 

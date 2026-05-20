@@ -16,7 +16,7 @@ export class EduSkillView implements OnInit {
   education: any[] = [];
   skills: string[] = [];
   loading = true;
-  API_URL = 'http://localhost:8080/api/education';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/education';
 
   constructor(private http: HttpClient, private auth: Auth, private router: Router) {}
 
@@ -26,7 +26,7 @@ export class EduSkillView implements OnInit {
   if (studentId) {
 
     // ✅ 1. Education API
-    this.http.get<any[]>(`http://localhost:8080/api/education/${studentId}`)
+    this.http.get<any[]>(`http://internconnect-5n7j.onrender.com/api/education/${studentId}`)
       .subscribe({
         next: (res) => {
           this.education = res || [];
@@ -35,7 +35,7 @@ export class EduSkillView implements OnInit {
       });
 
     // ✅ 2. Skills API (ADD THIS 🔥)
-    this.http.get<any[]>(`http://localhost:8080/api/skills/${studentId}`)
+    this.http.get<any[]>(`http://internconnect-5n7j.onrender.com/api/skills/${studentId}`)
       .subscribe({
         next: (res) => {
           this.skills = res.map(s => s.skillName); // important

@@ -13,7 +13,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class InternshipList implements OnInit {
 
-  API_URL = 'http://localhost:8080/api/company/internship';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/company/internship';
 
   allInternships: any[] = [];
   filteredInternships: any[] = [];

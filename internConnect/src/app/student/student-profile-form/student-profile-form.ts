@@ -19,7 +19,7 @@ export class StudentProfileForm implements OnInit {
   studentId!: number;
   isEditMode = false;
 
-  API_URL = 'http://localhost:8080/api/student-profile';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/student-profile';
 
   constructor(
     private fb: FormBuilder,

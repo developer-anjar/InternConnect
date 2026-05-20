@@ -18,7 +18,7 @@ export class ResumeForm implements OnInit {
   resumeForm!: FormGroup;
   studentId!: number;
   selectedFile: File | null = null;
-  API_URL = 'http://localhost:8080/api/resume';
+  API_URL = 'http://internconnect-5n7j.onrender.com/api/resume';
 
   constructor(
     private fb: FormBuilder,
@@ -49,7 +49,7 @@ loadResume() {
   this.http.get<any>(`${this.API_URL}/${this.studentId}`).subscribe({
     next: (res) => {
       if (res && res.fileUrl) {
-        this.resumeUrl = `http://localhost:8080/${res.fileUrl}`;
+        this.resumeUrl = `http://internconnect-5n7j.onrender.com/${res.fileUrl}`;
       }
     }
   });

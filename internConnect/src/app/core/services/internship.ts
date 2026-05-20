@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class InternshipService {
 
-  private baseUrl = 'http://localhost:8080/api/internships';
+  private baseUrl = 'http://internconnect-5n7j.onrender.com/api/internships';
 
   constructor(private http: HttpClient) {}
 

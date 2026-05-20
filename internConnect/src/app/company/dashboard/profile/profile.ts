@@ -50,7 +50,7 @@ getLogoGradient(name: string): string {
   router = inject(Router);
   auth = inject(Auth);
 
-  API_URL = "http://localhost:8080/api/company-profile";
+  API_URL = "http://internconnect-5n7j.onrender.com/api/company-profile";
 
   profile: any = null;
   loading = true;
