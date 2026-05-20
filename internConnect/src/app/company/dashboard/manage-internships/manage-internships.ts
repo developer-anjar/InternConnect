@@ -22,7 +22,7 @@ export class ManageInternships implements OnInit {
   internships: any[] = [];
   companyId!: number;
 
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/company/internship';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/company/internship';
 
   ngOnInit(): void {
 

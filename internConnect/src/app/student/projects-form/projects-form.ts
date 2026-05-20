@@ -17,7 +17,7 @@ export class ProjectsForm implements OnInit {
 
   projectsForm!: FormGroup;
   studentId!: number;
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/projects';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/projects';
 
   constructor(
     private fb: FormBuilder,

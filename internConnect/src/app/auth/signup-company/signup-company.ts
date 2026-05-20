@@ -54,7 +54,7 @@ export class SignupCompany implements OnInit {
     password: this.signupForm.value.password
   };
 
-  this.http.post('http://internconnect-5n7j.onrender.com/api/company/signup', signupData).subscribe({
+  this.http.post('https://internconnect-5n7j.onrender.com/api/company/signup', signupData).subscribe({
     next: (res: any) => {
       Swal.fire('Success', 'Signup successful!', 'success');
       this.router.navigate(['/login-company']);

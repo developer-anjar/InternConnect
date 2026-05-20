@@ -23,7 +23,7 @@ export class Applications implements OnInit {
   showModal = false;
   selectedApplication: any = null;
 
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/company/applications';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/company/applications';
 
   ngOnInit(): void {
 

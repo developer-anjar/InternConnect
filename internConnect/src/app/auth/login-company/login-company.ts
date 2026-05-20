@@ -42,7 +42,7 @@ userType: string = 'student';
       Swal.fire('Error', 'Please enter your email', 'error');
       return;
     }
-    this.http.post('http://internconnect-5n7j.onrender.com/api/company/forgot-password', { email: this.forgotEmail }).subscribe({
+    this.http.post('https://internconnect-5n7j.onrender.com/api/company/forgot-password', { email: this.forgotEmail }).subscribe({
       next: () => { Swal.fire('Success', 'Password reset email sent!', 'success'); this.forgotOpen = false; },
       error: () => { Swal.fire('Error', 'Failed to send reset link', 'error'); }
     });
@@ -51,7 +51,7 @@ userType: string = 'student';
   onLogin() {
     if (this.loginForm.valid) {
       const loginData = { ...this.loginForm.value, userType: this.userType };
-      this.http.post('http://internconnect-5n7j.onrender.com/api/company/login', loginData).subscribe({
+      this.http.post('https://internconnect-5n7j.onrender.com/api/company/login', loginData).subscribe({
         next: (res: any) => {
           const token = res.token || 'myAuthToken';
           this.auth.login(token, 'company');

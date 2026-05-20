@@ -26,7 +26,7 @@ export class AiChatbot implements OnInit {
   newMessage: string = '';
   isTyping = false;
 
-  CHAT_API = 'http://internconnect-5n7j.onrender.com/api/chat';
+  CHAT_API = 'https://internconnect-5n7j.onrender.com/api/chat';
 
   @ViewChild('chatMessages') chatMessages!: ElementRef;
 

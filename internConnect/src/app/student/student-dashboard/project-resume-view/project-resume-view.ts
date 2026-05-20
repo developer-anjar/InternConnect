@@ -17,7 +17,7 @@ export class ProjectResumeView implements OnInit {
   projects: any[] = [];
   resumeUrl: string = '';
   loading = true;
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/projects';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/projects';
 
   constructor(private http: HttpClient, private auth: Auth, private router: Router) {}
 
@@ -26,13 +26,13 @@ export class ProjectResumeView implements OnInit {
 
   if (studentId) {
     forkJoin({
-      projects: this.http.get<any[]>(`http://internconnect-5n7j.onrender.com/api/projects/${studentId}`),
-      resume: this.http.get<any>(`http://internconnect-5n7j.onrender.com/api/resume/${studentId}`)
+      projects: this.http.get<any[]>(`https://internconnect-5n7j.onrender.com/api/projects/${studentId}`),
+      resume: this.http.get<any>(`https://internconnect-5n7j.onrender.com/api/resume/${studentId}`)
     }).subscribe({
       next: (res) => {
         this.projects = res.projects || [];
         this.resumeUrl = res.resume?.fileUrl
-          ? `http://internconnect-5n7j.onrender.com/${res.resume.fileUrl}`
+          ? `https://internconnect-5n7j.onrender.com/${res.resume.fileUrl}`
           : '';
         this.loading = false;
       },

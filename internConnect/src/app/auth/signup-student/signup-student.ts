@@ -56,7 +56,7 @@ export class SignupStudent implements OnInit {
     password: this.signupForm.value.password
   };
 
-  this.http.post('http://internconnect-5n7j.onrender.com/api/student/signup', signupData)
+  this.http.post('https://internconnect-5n7j.onrender.com/api/student/signup', signupData)
     .subscribe({
       next: () => {
         Swal.fire('Success', 'Signup successful!', 'success');

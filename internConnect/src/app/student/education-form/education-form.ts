@@ -17,7 +17,7 @@ export class EducationForm implements OnInit {
 
   educationForm!: FormGroup;
   studentId!: number;
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/education';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/education';
 
   constructor(
     private fb: FormBuilder,

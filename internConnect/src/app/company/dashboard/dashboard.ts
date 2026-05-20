@@ -22,7 +22,7 @@ export class Dashboard implements OnInit {
   ngOnInit(): void {
     const companyId = this.auth.getCompanyId();
     if (companyId) {
-      this.http.get(`http://internconnect-5n7j.onrender.com/api/company-profile/${companyId}`).subscribe({
+      this.http.get(`https://internconnect-5n7j.onrender.com/api/company-profile/${companyId}`).subscribe({
         next: (res: any) => {
           this.companyName = res.companyName || 'Company';
         },

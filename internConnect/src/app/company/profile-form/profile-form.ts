@@ -20,7 +20,7 @@ export class ProfileForm implements OnInit {
   router = inject(Router);
   auth = inject(Auth);
 
-  API_URL = "http://internconnect-5n7j.onrender.com/api/company-profile";
+  API_URL = "https://internconnect-5n7j.onrender.com/api/company-profile";
 
   isEditMode = false;
 

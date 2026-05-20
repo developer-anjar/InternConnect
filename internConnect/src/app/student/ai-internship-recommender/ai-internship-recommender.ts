@@ -24,12 +24,12 @@ export class AiInternshipRecommender implements OnInit {
   recommendedInternships: any[] = [];
   loading = true;
 
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/student/internship';
-  PROFILE_API = 'http://internconnect-5n7j.onrender.com/api/student-profile';
-  EDUCATION_API = 'http://internconnect-5n7j.onrender.com/api/education';
-  SKILLS_API = 'http://internconnect-5n7j.onrender.com/api/skills';
-  PROJECTS_API = 'http://internconnect-5n7j.onrender.com/api/projects';
-  RESUME_API = 'http://internconnect-5n7j.onrender.com/api/resume';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/student/internship';
+  PROFILE_API = 'https://internconnect-5n7j.onrender.com/api/student-profile';
+  EDUCATION_API = 'https://internconnect-5n7j.onrender.com/api/education';
+  SKILLS_API = 'https://internconnect-5n7j.onrender.com/api/skills';
+  PROJECTS_API = 'https://internconnect-5n7j.onrender.com/api/projects';
+  RESUME_API = 'https://internconnect-5n7j.onrender.com/api/resume';
 
   constructor(
     private http: HttpClient,
@@ -47,7 +47,7 @@ export class AiInternshipRecommender implements OnInit {
     this.studentId = Number(id);
 
     this.loadStudentData();
-   this.http.get<any[]>(`http://internconnect-5n7j.onrender.com/api/ai/recommendations/${this.studentId}`)
+   this.http.get<any[]>(`https://internconnect-5n7j.onrender.com/api/ai/recommendations/${this.studentId}`)
 .subscribe({
   next: (res) => {
     this.recommendedInternships = res;

@@ -14,12 +14,12 @@ import { Auth } from '../../core/services/auth';
 })
 export class InternshipDetails implements OnInit {
 
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/student/internship';
-  PROFILE_API = 'http://internconnect-5n7j.onrender.com/api/student-profile';
-  EDUCATION_API = 'http://internconnect-5n7j.onrender.com/api/education';
-  SKILLS_API = 'http://internconnect-5n7j.onrender.com/api/skills';
-  PROJECTS_API = 'http://internconnect-5n7j.onrender.com/api/projects';
-  RESUME_API = 'http://internconnect-5n7j.onrender.com/api/resume';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/student/internship';
+  PROFILE_API = 'https://internconnect-5n7j.onrender.com/api/student-profile';
+  EDUCATION_API = 'https://internconnect-5n7j.onrender.com/api/education';
+  SKILLS_API = 'https://internconnect-5n7j.onrender.com/api/skills';
+  PROJECTS_API = 'https://internconnect-5n7j.onrender.com/api/projects';
+  RESUME_API = 'https://internconnect-5n7j.onrender.com/api/resume';
 
   internship: any = null;
   studentProfile: any = null;

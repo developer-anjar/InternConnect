@@ -11,7 +11,7 @@ import { Auth } from '../../core/services/auth';
   styleUrls: ['./applied-internships.css'],
 })
 export class AppliedInternships {
- API_URL = 'http://internconnect-5n7j.onrender.com/api/student/internship/applications';
+ API_URL = 'https://internconnect-5n7j.onrender.com/api/student/internship/applications';
 
   applications: any[] = [];
   studentId!: number;

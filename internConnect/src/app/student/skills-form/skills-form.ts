@@ -17,7 +17,7 @@ export class SkillsForm implements OnInit {
 
   skillsForm!: FormGroup;
   studentId!: number;
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/skills';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/skills';
 
   constructor(
     private fb: FormBuilder,

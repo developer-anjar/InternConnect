@@ -16,7 +16,7 @@ export class EduSkillView implements OnInit {
   education: any[] = [];
   skills: string[] = [];
   loading = true;
-  API_URL = 'http://internconnect-5n7j.onrender.com/api/education';
+  API_URL = 'https://internconnect-5n7j.onrender.com/api/education';
 
   constructor(private http: HttpClient, private auth: Auth, private router: Router) {}
 
